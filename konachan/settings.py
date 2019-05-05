@@ -70,7 +70,7 @@ ROBOTSTXT_OBEY = True
 #    'konachan.pipelines.KonachanPipeline': 300,
 #}
 ITEM_PIPELINES = {'konachan.pipelines.PostFilePipeline': 1}
-FILES_STORE = 'downloads'
+FILES_STORE = '/Users/luto/Pictures/Konachan'
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://doc.scrapy.org/en/latest/topics/autothrottle.html

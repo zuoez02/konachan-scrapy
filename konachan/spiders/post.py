@@ -94,12 +94,12 @@ class PostSpider(scrapy.Spider):
         id = s[len(s) - 2]
         post = KonachanItem()
         post['id'] = id
-        links = response.css('li.tag-link')
+        links = response.css('li.tag-link a::text').getall()
         tag = [];
+        i = len(links)
         for link in links:
-            if link is not None:
-                a = response.css('li.tag-link a::text').getall()[1]
-                tag.append(a)
+            if link is not None and link != '?':
+                tag.append(link)
         post['tag'] = ','.join(tag)
         post['folder'] = self.folder
         png = response.css('#png::attr(href)').extract_first()

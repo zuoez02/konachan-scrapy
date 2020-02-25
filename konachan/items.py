@@ -15,3 +15,8 @@ class KonachanItem(scrapy.Item):
     folder = scrapy.Field()
     file_urls = scrapy.Field()
 
+class YandereItem(scrapy.Item):
+    id = scrapy.Field()
+    tag = scrapy.Field()
+    folder = scrapy.Field()
+    file_urls = scrapy.Field()

@@ -54,9 +54,10 @@ ROBOTSTXT_OBEY = True
 
 # Enable or disable downloader middlewares
 # See https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
-#DOWNLOADER_MIDDLEWARES = {
+DOWNLOADER_MIDDLEWARES = {
+    'konachan.middlewares.ProxyMiddleware': 1
 #    'konachan.middlewares.KonachanDownloaderMiddleware': 543,
-#}
+}
 
 # Enable or disable extensions
 # See https://doc.scrapy.org/en/latest/topics/extensions.html
@@ -70,7 +71,7 @@ ROBOTSTXT_OBEY = True
 #    'konachan.pipelines.KonachanPipeline': 300,
 #}
 ITEM_PIPELINES = {'konachan.pipelines.PostFilePipeline': 1}
-FILES_STORE = '/Users/luto/Pictures/Konachan'
+FILES_STORE = '/Users/luto/smb/图库/二次元/Konachan'
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://doc.scrapy.org/en/latest/topics/autothrottle.html

@@ -2,3 +2,4 @@ cache/
 yandere_cache/
 *.log
 downloads/
+*.pyc

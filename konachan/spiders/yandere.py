@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import scrapy
 from scrapy import signals
-from scrapy.xlib.pydispatch import dispatcher
+# from scrapy.xlib.pydispatch import dispatcher
 import urllib
 from konachan.items import YandereItem
 import logging
@@ -139,6 +139,12 @@ class YandereSpider(scrapy.Spider):
     def spider_closed(self):
         self.write_cache(self.cache);
 
-    def __init__(self, name=None, **kwargs):
-        dispatcher.connect(self.spider_closed, signals.spider_closed)
-        return super().__init__(name=name, **kwargs)
+    @classmethod
+    def from_crawler(cls, crawler, *args, **kwargs):
+        spider = super(YandereSpider, cls).from_crawler(crawler, *args, **kwargs)
+        # crawler.signals.connect(spider.spider_opened, signals.spider_opened)
+        return spider
+
+    # def __init__(self, name=None, **kwargs):
+    #     dispatcher.connect(self.spider_closed, signals.spider_closed)
+    #     return super().__init__(name=name, **kwargs)
